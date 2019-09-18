@@ -1,6 +1,10 @@
-player_name = 'Diamond'
+""" player_name = 'Diamond'
 player_attack = 10
 player_heal = 16
-health = 100
+health = 100 """
 
-print(player_name)
+#create variable to contain all information
+#use a list
+player = ['Diamond', 10, 16, 100]
+
+print(player)
