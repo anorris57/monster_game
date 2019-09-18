@@ -15,5 +15,15 @@ player ={
   'heal': 16,
   'health': 100
 }
+monster ={
+  'name': 'Iron',
+  'attack': 12,
+  'health': 100
+}
 
-print(player['attack'])
+# use print statement to create user interface using input methond
+print('1) Attack')
+print('2) Heal')
+input('Please select action: ')
+
+
