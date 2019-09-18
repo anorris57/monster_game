@@ -21,9 +21,16 @@ monster ={
   'health': 100
 }
 
-# use print statement to create user interface using input methond
+# use print statement to create user interface using input method
+print('Please select action: ')
 print('1) Attack')
 print('2) Heal')
-input('Please select action: ')
+player_choice = input()
 
+if player_choice == '1':
+  print('Attack')
+elif player_choice == '2':
+  print('Heal player')
+else:
+  print('Invalid selection')
 
