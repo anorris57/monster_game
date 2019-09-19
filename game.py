@@ -33,7 +33,13 @@ while game_running == True:
 
   if player_choice == '1':
       monster['health'] = monster['health'] - player['attack']
-      player['health'] = player['health'] - monster['attack']
+      if monster['health'] <= 0:
+        pass
+      else:
+        player['health'] = player['health'] - monster['attack']
+        if player['health'] <= 0:
+          pass
+
       pattack_result = "New monster health is {}"
       mattack_result = "New player health is {}"
       print(pattack_result.format(monster['health']))
