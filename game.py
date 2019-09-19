@@ -11,7 +11,7 @@ player2 = ['Ruby', 10, 16, 100] """
 #create dictionary use key value pairs
 player ={
   'name': 'Diamond',
-  'attack': 10,
+  'attack': 13,
   'heal': 16,
   'health': 100
 }
@@ -44,5 +44,5 @@ while game_running == True:
   else:
     print('Invalid selection')
 
-  if player['health'] <= 0:
+  if player['health'] <= 0 or monster['health'] <= 0:
     game_running = False
