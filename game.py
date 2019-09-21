@@ -28,11 +28,21 @@ while game_running == True:
   'health': 100
   }
 
+  print('---'*7)
+  print('Enter Player name')
+  player['name']= input()
+
+  print('---'*7)
+  playerInfo = "{} has {} health."
+  print(playerInfo.format(player['name'], player['health']))
+  print(playerInfo.format(monster['name'], monster['health']))
+
   while new_round == True:
 
     player_won = False
     monster_won = False
 
+    print('---'*7)
     # use print statement to create user interface using input method
     print('Please select action: ')
     print('1) Attack')
@@ -49,11 +59,6 @@ while game_running == True:
           if player['health'] <= 0:
             monster_won = True
 
-        pattack_result = "New monster health is {}"
-        mattack_result = "New player health is {}"
-        print(pattack_result.format(monster['health']))
-        print(mattack_result.format(player['health']))
-
     elif player_choice == '2':
       print('Heal player')
 
@@ -64,5 +69,17 @@ while game_running == True:
     else:
       print('Invalid selection')
 
-    if player_won == True or monster_won == True:
-      new_round = False
+    if player_won == False and monster_won == False:
+        player_result = "{} remaining health is {}"
+        monster_result = "{} remaining health is {}"
+        print(player_result.format(player['name'], player['health']))
+        print(monster_result.format(monster['name'], monster['health']))
+        
+    elif player_won:
+        player_won_result = "{} won!"
+        print(player_won_result.format(player['name']))
+        new_round = False
+
+    elif monster_won:
+        print('The Monster won')
+        new_round = False
