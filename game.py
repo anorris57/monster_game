@@ -60,7 +60,12 @@ while game_running == True:
             monster_won = True
 
     elif player_choice == '2':
-      print('Heal player')
+      player['health'] = player['health'] + player['heal']
+
+      player['health'] = player['health'] - monster['attack']
+      if player['health'] <= 0:
+        monster_won = True
+
 
     elif player_choice == '3':
       new_round = False
