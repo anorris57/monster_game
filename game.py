@@ -13,7 +13,7 @@ import random
 game_running = True
 
 def calculate_monster_attack():
-  return random.randint(10,20)
+  return random.randint(monster['attack_min'],monster['attack_max'])
 
 
 while game_running == True:
@@ -27,6 +27,8 @@ while game_running == True:
   }
   monster = {
   'name': 'Iron',
+  'attack_min': 10,
+  'attack_max': 20,
   'health': 100
   }
 
@@ -64,7 +66,8 @@ while game_running == True:
 
     elif player_choice == '2':
     #  monster_attack = random.randint(10,20)
-      player['health'] = player['health'] + player['heal']
+      player_heal = random.randint(9, 19)
+      player['health'] = player['health'] + player_heal
 
       player['health'] = player['health'] - calculate_monster_attack()
       if player['health'] <= 0:
