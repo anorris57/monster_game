@@ -8,7 +8,7 @@ health = 100 """
 """ player = ['Diamond', 10, 16, 100]
 player2 = ['Ruby', 10, 16, 100] """
 
-
+import random
 #booleans easily help control while loops
 game_running = True
 
@@ -22,9 +22,8 @@ while game_running == True:
   'heal': 16,
   'health': 100
   }
-  monster ={
+  monster = {
   'name': 'Iron',
-  'attack': 12,
   'health': 100
   }
 
@@ -55,14 +54,17 @@ while game_running == True:
         if monster['health'] <= 0:
           player_won = True
         else:
-          player['health'] = player['health'] - monster['attack']
+          monster_attack = random.randint(10,20)
+          player['health'] = player['health'] - monster_attack
           if player['health'] <= 0:
             monster_won = True
 
     elif player_choice == '2':
+      monster_attack = random.randint(10,20)
       player['health'] = player['health'] + player['heal']
 
-      player['health'] = player['health'] - monster['attack']
+      player['health'] = player['health'] - monster_attack
+      
       if player['health'] <= 0:
         monster_won = True
 
