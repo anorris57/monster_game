@@ -12,6 +12,9 @@ import random
 #booleans easily help control while loops
 game_running = True
 
+def calculate_monster_attack():
+  return random.randint(10,20)
+
 
 while game_running == True:
   new_round = True
@@ -54,17 +57,16 @@ while game_running == True:
         if monster['health'] <= 0:
           player_won = True
         else:
-          monster_attack = random.randint(10,20)
-          player['health'] = player['health'] - monster_attack
+       #   monster_attack = random.randint(10,20)
+          player['health'] = player['health'] - calculate_monster_attack()
           if player['health'] <= 0:
             monster_won = True
 
     elif player_choice == '2':
-      monster_attack = random.randint(10,20)
+    #  monster_attack = random.randint(10,20)
       player['health'] = player['health'] + player['heal']
 
-      player['health'] = player['health'] - monster_attack
-      
+      player['health'] = player['health'] - calculate_monster_attack()
       if player['health'] <= 0:
         monster_won = True
 
