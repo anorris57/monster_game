@@ -15,6 +15,10 @@ game_running = True
 def calculate_monster_attack():
   return random.randint(monster['attack_min'],monster['attack_max'])
 
+def game_ends(winner_name):
+    player_won_result = "{} won!"
+    print(player_won_result.format(winner_name))
+
 
 while game_running == True:
   new_round = True
@@ -66,8 +70,8 @@ while game_running == True:
 
     elif player_choice == '2':
     #  monster_attack = random.randint(10,20)
-      player_heal = random.randint(9, 19)
-      player['health'] = player['health'] + player_heal
+    #  player_heal = random.randint(9, 19)
+      player['health'] = player['health'] + player['heal']
 
       player['health'] = player['health'] - calculate_monster_attack()
       if player['health'] <= 0:
@@ -88,10 +92,18 @@ while game_running == True:
         print(monster_result.format(monster['name'], monster['health']))
         
     elif player_won:
+        game_ends(player['name'])
+        new_round = False
+
+    elif monster_won:
+        game_ends(monster['name'])
+        new_round = False
+        
+"""     elif player_won:
         player_won_result = "{} won!"
         print(player_won_result.format(player['name']))
         new_round = False
 
     elif monster_won:
         print('The Monster won')
-        new_round = False
+        new_round = False """
