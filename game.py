@@ -16,8 +16,9 @@ def calculate_monster_attack():
   return random.randint(monster['attack_min'],monster['attack_max'])
 
 def game_ends(winner_name):
-    player_won_result = "{} won!"
-    print(player_won_result.format(winner_name))
+  print(f'{winner_name} won the game!')
+  """ player_won_result = "{} won!"
+    print(player_won_result.format(winner_name)) """
 
 
 while game_running == True:
